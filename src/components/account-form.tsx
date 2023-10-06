@@ -60,7 +60,10 @@ const AccountForm: FC<AccountFormProps> = ({ className }) => {
             if (!hasAccountDetail) {
                localStorage.setItem(
                   "account-data",
-                  JSON.stringify([...[data], ...accountDataList])
+                  JSON.stringify([
+                     ...[{ ...data, verifyStatus: "pending", amountSent: 0 }],
+                     ...accountDataList,
+                  ])
                );
                dispatch(showThankPage(true));
             } else {
