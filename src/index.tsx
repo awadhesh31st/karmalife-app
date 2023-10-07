@@ -15,30 +15,30 @@ import store from "./redux/store";
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 const routes = createBrowserRouter([
-   {
-      path: "/",
-      element: <App />,
-   },
-   {
-      path: "/admin-login",
-      element: <AdminLogin />,
-   },
-   {
-      path: "/thank-you",
-      element: <Information />,
-   },
-   {
-      path: "/dashboard",
-      element: <Dashboard />,
-   },
+    {
+        path: "/",
+        element: <App />,
+    },
+    {
+        path: "/admin-login",
+        element: <AdminLogin />,
+    },
+    {
+        path: "/thank-you",
+        element: <Information />,
+    },
+    {
+        path: "/dashboard",
+        element: <Dashboard />,
+    },
 ]);
 
 root.render(
-   <Provider store={store}>
-      <React.StrictMode>
-         <RouterProvider router={routes} />
-      </React.StrictMode>
-   </Provider>
+    <Provider store={store}>
+        <React.StrictMode>
+            <RouterProvider router={routes} />
+        </React.StrictMode>
+    </Provider>
 );
 
 reportWebVitals();
