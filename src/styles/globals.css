@@ -3,44 +3,44 @@
 @tailwind utilities;
 
 @font-face {
-   font-family: "font-100";
-   src: url("../../public/fonts/brand-100.ttf") format("truetype");
+    font-family: "font-100";
+    src: url("../../public/fonts/brand-100.ttf") format("truetype");
 }
 @font-face {
-   font-family: "font-200";
-   src: url("../../public/fonts/brand-200.ttf") format("truetype");
+    font-family: "font-200";
+    src: url("../../public/fonts/brand-200.ttf") format("truetype");
 }
 @font-face {
-   font-family: "font-300";
-   src: url("../../public/fonts/brand-300.ttf") format("truetype");
+    font-family: "font-300";
+    src: url("../../public/fonts/brand-300.ttf") format("truetype");
 }
 @font-face {
-   font-family: "font-400";
-   src: url("../../public/fonts/brand-400.ttf") format("truetype");
+    font-family: "font-400";
+    src: url("../../public/fonts/brand-400.ttf") format("truetype");
 }
 @font-face {
-   font-family: "font-500";
-   src: url("../../public/fonts/brand-500.ttf") format("truetype");
+    font-family: "font-500";
+    src: url("../../public/fonts/brand-500.ttf") format("truetype");
 }
 @font-face {
-   font-family: "font-600";
-   src: url("../../public/fonts/brand-600.ttf") format("truetype");
+    font-family: "font-600";
+    src: url("../../public/fonts/brand-600.ttf") format("truetype");
 }
 @font-face {
-   font-family: "font-700";
-   src: url("../../public/fonts/brand-700.ttf") format("truetype");
+    font-family: "font-700";
+    src: url("../../public/fonts/brand-700.ttf") format("truetype");
 }
 @font-face {
-   font-family: "font-800";
-   src: url("../../public/fonts/brand-800.ttf") format("truetype");
+    font-family: "font-800";
+    src: url("../../public/fonts/brand-800.ttf") format("truetype");
 }
 @font-face {
-   font-family: "font-900";
-   src: url("../../public/fonts/brand-900.ttf") format("truetype");
+    font-family: "font-900";
+    src: url("../../public/fonts/brand-900.ttf") format("truetype");
 }
 
 @layer base {
-   body {
-      @apply bg-coal text-biege font-light;
-   }
+    body {
+        @apply bg-coal text-biege font-light;
+    }
 }

@@ -1,4 +1,4 @@
 export interface MessageProps {
-   isError?: boolean;
-   message?: string;
+    isError?: boolean;
+    message?: string;
 }
