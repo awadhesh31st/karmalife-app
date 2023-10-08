@@ -112,6 +112,16 @@ const MakePaymentForm: FC<MakePaymentFormProps> = ({ className }) => {
                                 : "text-lime-500"
                         }
                     >
+                        <span className={accountData?.verifyStatus === "pending" ? "text-amber-700" : "text-lime-500"}>
+                            {accountData?.verifyStatus === "pending" ? "Total Amount" : "Amount Paid "}
+                        </span>
+                        <span className="px-3 py-1 text-sm font-regular bg-lime-900">
+                            {accountData?.verifyStatus === "pending"
+                                ? "This payment is for only verify account"
+                                : "Account has been verified successfully"}
+                        </span>
+                    </span>
+                    <span className={accountData?.verifyStatus === "pending" ? "text-amber-700" : "text-lime-500"}>
                         ₹1
                     </span>
                 </span>

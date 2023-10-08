@@ -31,9 +31,9 @@ const Dashboard = () => {
         <div className="px-4 mx-auto sm:px-6 xl:max-w-7xl xl:px-0">
             <div className="flex flex-col justify-between h-screen my-12 sm:my-24">
                 <div className="grid grid-cols-2 gap-16">
-                    <div className="col-span-1">
+                    <div className="col-span-2 lg:col-span-1">
                         <div className="grid grid-cols-2 gap-8">
-                            <div className="col-span-1">
+                            <div className="col-span-2 lg:col-span-1">
                                 <DateComponent />
                             </div>
                             <div className="flex flex-col items-center justify-center col-span-2 gap-4 lg:col-span-1">
@@ -50,7 +50,7 @@ const Dashboard = () => {
                             )}
                         </div>
                     </div>
-                    <div className="col-span-1">
+                    <div className="col-span-2 lg:col-span-1">
                         <AccountList />
                     </div>
                 </div>
