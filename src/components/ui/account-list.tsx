@@ -16,7 +16,7 @@ const AccountList = () => {
     }, [dispatch]);
 
     const verifyAccountDetail = (account: AccountDataProps) => {
-        account?.verifyStatus !== "success" && dispatch(addAccountData(account));
+        dispatch(addAccountData(account));
     };
 
     return (
