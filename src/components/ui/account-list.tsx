@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getAccountData } from "../../lib/utils";
 import { AccountDataProps } from "../../types/form";
 import notData from "../../assets/no-data.png";
@@ -8,7 +8,9 @@ import { InitialStateProps } from "../../redux/reducer";
 
 const AccountList = () => {
     const dispatch = useDispatch();
-    const { accountList } = useSelector((state: { data: InitialStateProps }) => state.data);
+
+    const [initialCount, setinitialCount] = useState<number>(3);
+    const { accountList, accountData } = useSelector((state: { data: InitialStateProps }) => state.data);
 
     useEffect(() => {
         const accountData = getAccountData();
@@ -19,8 +21,12 @@ const AccountList = () => {
         account?.verifyStatus !== "success" && dispatch(addAccountData(account));
     };
 
+    const showMore = () => {
+        setinitialCount((old) => old + 3);
+    };
+
     return (
-        <div className="px-8 py-5 rounded-xl bg-charcoal">
+        <div className="px-8 pt-5 pb-12 rounded-xl bg-charcoal">
             <div className="mt-3 mb-6 text-white">
                 <span className="text-3xl font-semiBold">Account details list</span>
             </div>
@@ -31,10 +37,12 @@ const AccountList = () => {
             ) : (
                 <>
                     <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-                        {accountList?.map((account: AccountDataProps, key: number) => {
+                        {accountList?.slice(0, initialCount)?.map((account: AccountDataProps, key: number) => {
                             return (
                                 <li
-                                    className="px-4 py-3 rounded-md cursor-pointer sm:py-4 hover:bg-neutral-900"
+                                    className={`px-4 py-3 border-0 border-transparent cursor-pointer sm:py-4 hover:bg-neutral-900 ${
+                                        account?.accountNumber === accountData?.accountNumber && "bg-neutral-900"
+                                    }`}
                                     key={key}
                                     onClick={() => verifyAccountDetail(account)}
                                 >
@@ -76,11 +84,16 @@ const AccountList = () => {
                             );
                         })}
                     </ul>
-                    <div className="flex justify-end my-5">
-                        <button className="px-5 py-2 capitalize rounded-xl bg-sky-700 font-semiBold hover:bg-sky-800">
-                            View more
-                        </button>
-                    </div>
+                    {accountList?.length !== 0 && (accountList || [])?.length > initialCount && (
+                        <div className="flex justify-end mt-5">
+                            <button
+                                className="px-5 py-2 capitalize rounded-xl bg-sky-700 font-semiBold hover:bg-sky-800"
+                                onClick={showMore}
+                            >
+                                View more
+                            </button>
+                        </div>
+                    )}
                 </>
             )}
         </div>

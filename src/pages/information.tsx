@@ -1,8 +1,11 @@
 import logo from "../assets/logo.png";
 import { useDispatch } from "react-redux";
 import { showThankPage } from "../redux/actions";
+import { useNavigate } from "react-router-dom";
+import { FaSignInAlt, FaPlus } from "react-icons/fa";
 
 const Information = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     return (
         <div className="flex flex-col items-center justify-center w-screen h-screen px-10 sm:px-0">
@@ -19,12 +22,20 @@ const Information = () => {
                     </a>
                     . We'll be in touch within one business day.
                 </p>
-                <span
-                    onClick={() => dispatch(showThankPage(false))}
-                    className="px-8 mt-4 text-sm text-center cursor-pointer text-amber-400"
-                >
-                    Add new account
-                </span>
+                <div className="flex items-center justify-center gap-4 mt-8 text-sm text-center">
+                    <span
+                        onClick={() => dispatch(showThankPage(false))}
+                        className="cursor-pointer text-amber-400 hover:underline"
+                    >
+                        <FaPlus />
+                    </span>
+                    <span
+                        onClick={() => navigate("/admin-login")}
+                        className="cursor-pointer text-amber-400 hover:underline"
+                    >
+                        <FaSignInAlt />
+                    </span>
+                </div>
             </div>
         </div>
     );
