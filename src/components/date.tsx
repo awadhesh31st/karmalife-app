@@ -27,7 +27,7 @@ const DateComponent = () => {
                 <div className="py-2 pl-4 mt-6 tracking-wide border-l-8 rounded-lg font-regular border-amber-400">
                     Hi Admin you have{" "}
                     <span className="text-lime-300">
-                        {accountList?.reduce((total, item) => total + (item.verifyStatus !== "success" ? 1 : 0), 0) ||
+                        {accountList?.reduce((total, item) => total + (item.verifyStatus === "pending" ? 1 : 0), 0) ||
                             0}{" "}
                         accounts
                     </span>{" "}

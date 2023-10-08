@@ -36,9 +36,6 @@ const Dashboard = () => {
                             <div className="col-span-1">
                                 <DateComponent />
                             </div>
-<<<<<<< Updated upstream
-                            <div className="col-span-1">two</div>
-=======
                             <div className="flex flex-col items-center justify-center col-span-2 gap-4 lg:col-span-1">
                                 <img src="https://robohash.org/lgo.png" alt="user-logo" className="w-2/3" />
                                 <span className="flex flex-col items-center justify-center">
@@ -46,7 +43,6 @@ const Dashboard = () => {
                                     <span className="text-3xl font-bold text-rose-600">₹{totalAmount}</span>
                                 </span>
                             </div>
->>>>>>> Stashed changes
                             {accountData && (
                                 <div className="col-span-2">
                                     <MakePaymentForm />
