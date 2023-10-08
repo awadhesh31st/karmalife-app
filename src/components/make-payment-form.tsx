@@ -4,7 +4,7 @@ import { cm } from "../lib/utils";
 import { InitialStateProps } from "../redux/reducer";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../assets/logo.png";
-import { addAccountData, removeAccountData, updateAccountData } from "../redux/actions";
+import { addAccountData, updateAccountData } from "../redux/actions";
 import { AccountDataProps } from "../types/form";
 import { bankAccountDetailsMock } from "../mock/account-mock";
 
@@ -103,6 +103,7 @@ const MakePaymentForm: FC<MakePaymentFormProps> = ({ className }) => {
                                 : "Account has been not verified successfully"}
                         </span>
                     </span>
+
                     <span
                         className={
                             accountData?.verifyStatus === "pending"
@@ -112,16 +113,6 @@ const MakePaymentForm: FC<MakePaymentFormProps> = ({ className }) => {
                                 : "text-lime-500"
                         }
                     >
-                        <span className={accountData?.verifyStatus === "pending" ? "text-amber-700" : "text-lime-500"}>
-                            {accountData?.verifyStatus === "pending" ? "Total Amount" : "Amount Paid "}
-                        </span>
-                        <span className="px-3 py-1 text-sm font-regular bg-lime-900">
-                            {accountData?.verifyStatus === "pending"
-                                ? "This payment is for only verify account"
-                                : "Account has been verified successfully"}
-                        </span>
-                    </span>
-                    <span className={accountData?.verifyStatus === "pending" ? "text-amber-700" : "text-lime-500"}>
                         ₹1
                     </span>
                 </span>

@@ -9,7 +9,7 @@ import { InitialStateProps } from "../../redux/reducer";
 const AccountList = () => {
     const dispatch = useDispatch();
 
-    const [initialCount, setinitialCount] = useState<number>(3);
+    const [initialCount, setinitialCount] = useState<number>(6);
     const { accountList, accountData } = useSelector((state: { data: InitialStateProps }) => state.data);
 
     useEffect(() => {
