@@ -34,7 +34,6 @@ To run KarmaLife on your local machine, follow these steps:
 To access the admin panel, use the following credentials:
 
 - Username: admin
-- Password: (Leave it empty)
 
 ## Mock Data
 
