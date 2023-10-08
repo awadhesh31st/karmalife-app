@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# KarmaLife Mobile Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+KarmaLife is a mobile application designed to help you keep track of your good deeds and acts of kindness. Whether it's volunteering, donating, or simply helping a neighbor, KarmaLife helps you record and share your positive actions with the world.
 
-## Available Scripts
+<img width="200" alt="Screenshot 2023-10-08 at 1 46 42 PM" src="https://github.com/awadhesh31st/karmalife-app/assets/91739540/86d226c0-fffb-4d1f-b161-933eac7f5e8f">
+<img width="200" alt="Screenshot 2023-10-08 at 1 47 21 PM" src="https://github.com/awadhesh31st/karmalife-app/assets/91739540/9aa5e40b-8815-4a12-8377-e91d9e66ea0c">
+<img width="200" alt="Screenshot 2023-10-08 at 1 47 48 PM" src="https://github.com/awadhesh31st/karmalife-app/assets/91739540/39224abc-7bdc-49c9-8250-f5970e2822ff">
+<img width="200" alt="Screenshot 2023-10-08 at 1 48 43 PM" src="https://github.com/awadhesh31st/karmalife-app/assets/91739540/11694cef-cf30-40eb-ab68-881ea1e75dee">
 
-In the project directory, you can run:
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To run KarmaLife on your local machine, follow these steps:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the Git repository:
+   ```
+   git clone https://github.com/awadhesh31st/karmalife-app.git
+   ```
+   
+3. Install the required dependencies:
+   ```
+   bun install
+   ```
+   
+5. Start the application:
+   ```
+   bun run start
+   ```
+   
+7. Access the app in your web browser at [http://localhost:3000](http://localhost:3000).
 
-### `npm test`
+## Admin Login
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To access the admin panel, use the following credentials:
 
-### `npm run build`
+- Username: admin
+- Password: (Leave it empty)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Mock Data
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You can use mock data for testing purposes. [Here](https://github.com/awadhesh31st/karmalife-app/blob/master/src/mock/account-mock.ts) is the link to the mock data file.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Live Demo
 
-### `npm run eject`
+You can also check out the live demo of KarmaLife at [https://karmalife-app.vercel.app/](https://karmalife-app.vercel.app/).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Feel free to contribute to the project or report any issues on the [GitHub repository](https://github.com/awadhesh31st/karmalife-app). We welcome your feedback and contributions to make KarmaLife even better!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
