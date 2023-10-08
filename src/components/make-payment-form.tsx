@@ -43,7 +43,15 @@ const MakePaymentForm: FC<MakePaymentFormProps> = ({ className }) => {
 
     return (
         <div className={cm("flex flex-col gap-8 px-8 py-5 rounded-xl", className)}>
-            <div className="text-3xl font-semiBold">Manage Account verification</div>
+            <div
+                className={`${
+                    accountData?.verifyStatus === "pending" ? "text-amber-700" : "text-lime-500"
+                } text-3xl font-semiBold`}
+            >
+                {accountData?.verifyStatus === "pending"
+                    ? "Your account verification is pending"
+                    : "Account has been verified"}
+            </div>
             <div className="flex flex-col gap-2">
                 <div className="grid grid-cols-2">
                     <span className="col-span-1 font-medium uppercase text-grayDark">Bank Name</span>
@@ -62,24 +70,32 @@ const MakePaymentForm: FC<MakePaymentFormProps> = ({ className }) => {
                 <span className="px-5 py-2 bg-neutral-800">Make Payment for verification account</span>
                 <span className="flex justify-between text-2xl mt-11 font-extraBold">
                     <span className="flex flex-col gap-2">
-                        <span className="text-amber-700">Total Amount</span>
+                        <span className={accountData?.verifyStatus === "pending" ? "text-amber-700" : "text-lime-500"}>
+                            {accountData?.verifyStatus === "pending" ? "Total Amount" : "Amount Paid "}
+                        </span>
                         <span className="px-3 py-1 text-sm font-regular bg-lime-900">
-                            This payment is for only verify account
+                            {accountData?.verifyStatus === "pending"
+                                ? "This payment is for only verify account"
+                                : "Account has been verified successfully"}
                         </span>
                     </span>
-                    <span className="text-amber-700">₹1</span>
+                    <span className={accountData?.verifyStatus === "pending" ? "text-amber-700" : "text-lime-500"}>
+                        ₹1
+                    </span>
                 </span>
-                <span className="flex justify-end mt-11">
-                    {!isLoading && (
-                        <button
-                            className="flex items-center justify-center gap-1 px-5 py-2 text-xl font-medium bg-teal-800 rounded-lg hover:bg-teal-900"
-                            onClick={makePayment}
-                        >
-                            Make Payment
-                        </button>
-                    )}
-                    {isLoading && <img src={logo} alt="logo" className="w-10 animate-spin" />}
-                </span>
+                {accountData?.verifyStatus === "pending" && (
+                    <span className="flex justify-end mt-11">
+                        {!isLoading && (
+                            <button
+                                className="flex items-center justify-center gap-1 px-5 py-2 text-xl font-medium bg-teal-800 rounded-lg hover:bg-teal-900"
+                                onClick={makePayment}
+                            >
+                                Make Payment
+                            </button>
+                        )}
+                        {isLoading && <img src={logo} alt="logo" className="w-10 animate-spin" />}
+                    </span>
+                )}
             </div>
         </div>
     );
